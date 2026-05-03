@@ -1,12 +1,10 @@
  // assets/js/hello.js
-const author = "이상";
-const title = "날개";
-const year = 1936;
-const today = 2026;
-const yearsPassed = today - year;
+const name = "허인영";
+const major = "지리학과";
+const year = 2026;
+
 
 console.log(
-    `안녕하세요! ${author}의 「${title}」 (${year}) ` +
-    `페이지에 오신 것을 환영합니다.`
+    `안녕하세요! 저는 ${major}를 전공하고 있는 ${name}입니다.`
 );
-console.log(`이 작품은 발표된 지 ${yearsPassed}년이 되었습니다.`);
+console.log(`이 페이지는 ${year}년에 개설되었습니다.`);
