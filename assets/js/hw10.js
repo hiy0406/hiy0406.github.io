@@ -1,6 +1,7 @@
 // [숙제10] JavaScript 기초 연습
 // 2021-10573 허인영
 
+
 //Q1
 function classifyEra(year) {
     if (year < 1910) {
