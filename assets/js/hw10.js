@@ -33,7 +33,7 @@ const long = works.filter(w => w.length >= 3);
 console.log(long);
 
 for (let i=0; i<long.length; i++) {
-    console.log(`${i}번째 작품: ${long[i]}`);
+    console.log(`${i+1}번째 작품: ${long[i]}`);
 }
 
 //Q3
