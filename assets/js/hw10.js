@@ -71,8 +71,8 @@ const frequent = targets.filter(t => countChar(text,t) >= 2);
 console.log(frequent);
 
 let maxIdx=0;
-for (let i=1 ; i<CountQueuingStrategy.length ; i++) {
-    if (counts[i] > counts[maxIdx]) maxIDx = i;
+for (let i=1 ; i<counts.length ; i++) {
+    if (counts[i] > counts[maxIdx]) maxIdx = i;
     }
 
 const topChar = targets[maxIdx];
