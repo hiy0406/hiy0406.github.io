@@ -45,15 +45,15 @@ function countChar(text, target){
     return count;
 }
 
-const texts = ["박씨는 이씨에게 시집간 김씨의 외사촌 동생이다.", 
+const texts1 = ["박씨는 이씨에게 시집간 김씨의 외사촌 동생이다.", 
     "이상의 「날개」는 1936년 작품이다.",
     "banana"];
-const targets = ["씨", "이", "a"]
+const targets1 = ["씨", "이", "a"];
 
-for (let i=0 ; i<texts.length ; i++) {
-    const text = texts[i]
-    const target = targets[i]
-    console.log(`"${text}"에서 '${target}'는 ${countChar(text, target)}번 등장합니다.`)
+for (let i=0 ; i<texts1.length ; i++) {
+    const text = texts1[i];
+    const target = targets1[i];
+    console.log(`"${text}"에서 '${target}'는 ${countChar(text, target)}번 등장합니다.`);
 }
 
 //Q4
@@ -64,16 +64,16 @@ const counts = targets.map(target => countChar(text,target));
 console.log(counts);
 
 for (let i=0 ; i<targets.length ; i++) {
-    console.log(`'${targets[i]}' : ${counts[i]}번`)
+    console.log(`'${targets[i]}' : ${counts[i]}번`);
 }
 
-const frequent = targets.filter(t => countChar(text,t) >= 2)
-console.log(frequent)
+const frequent = targets.filter(t => countChar(text,t) >= 2);
+console.log(frequent);
 
 let maxIdx=0;
 for (let i=1 ; i<CountQueuingStrategy.length ; i++) {
     if (counts[i] > counts[maxIdx]) maxIDx = i;
     }
 
-const topChar = targets[maxIdx]
-console.log(`가장 자주 나온 글자: '${topChar}' (${counts[maxIdx]}번)`)
+const topChar = targets[maxIdx];
+console.log(`가장 자주 나온 글자: '${topChar}' (${counts[maxIdx]}번)`);
