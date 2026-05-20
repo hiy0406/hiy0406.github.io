@@ -1,6 +1,6 @@
 const canvas = document.querySelector("#my-chart");
 
-new CharacterData(canvas, {
+new Chart(canvas, {
     type: "bar",
     data: {
         labels: ["김소월", "이상", "윤동주"],
