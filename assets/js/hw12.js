@@ -6,10 +6,10 @@ fetch("/data/sillok.json")
     .then(response => response.json())
     .then(records => {
         const data = records;
-        drawChart(data);
+        drawQ1Chart(data);
     });
 
-function drawChart(rows) {
+function drawQ1Chart(rows) {
     const labels = rows.map(r => r.king);
     const counts = rows.map(r => r.volumes);
 
@@ -18,7 +18,11 @@ function drawChart(rows) {
         type: "bar",
         data: {
             labels: labels,
-            datasets: [{ label: "권수", data: counts, backgroundColor: "rgba(54, 162, 235, 0.6)"}],
+            datasets: [{
+                label: "권수",
+                data: counts,
+                backgroundColor: "rgba(54, 162, 235, 0.6)"
+            }],
         },
         options: {
             plugins: {
@@ -34,8 +38,48 @@ function drawChart(rows) {
 }
 
 // Q2
-// fetch(”/data/nobel-literature.csv”)
-// .then(response => response.text())
-// .then(csv => {
-// ...
-// });
+fetch("/data/nobel-literature.csv")
+    .then(response => response.text())
+    .then(csv => {
+        const rows = csv
+            .split("\n")
+            .slice(1)
+            .filter(line => line.trim() !== "")
+            .map(line => {
+                const cols = line.split(",");
+                return {
+                    decade: Number(cols[0]),
+                    count: Number(cols[1]),
+                };
+            });
+        drawQ2Chart(rows);
+    });
+
+function drawQ2Chart(rows) {
+    const labels = rows.map(r => `${r.decade}년대`);
+    const counts = rows.map(r => r.count);
+
+    const canvas = document.querySelector("#q2-chart");
+    new Chart(canvas, {
+        type : "line",
+        data : {
+            labels: labels,
+            datasets: [{
+                label: "수상자 수",
+                data: counts,
+                borderColor: "rgba(54, 162, 235, 1)",
+                backgroundColor : "rgba(54, 162, 235, 0.2)",
+            }],
+        },
+        options: {
+            plugins: {
+                title: {display: true, text: "노벨문학상 수상자 수 추이 (10년 단위)"},
+                legend: {display: true},
+            },
+            scales: {
+                y: {title: {display: true, text: "수상자 수"}},
+                x: {title: {display: true, text: "연대"}},
+            },
+        },
+    });
+}
