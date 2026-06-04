@@ -60,7 +60,7 @@ Promise.all([
     fetch("/data/frankenstein.txt").then(r => r.text()),
     fetch("/data/dracula.txt").then(r => r.text()),
     fetch("/data/stopwords-en.txt").then(r => r.text()),
-]).then(([frankText, dracText, stopText]) => {
+]).then(([frankText, dracText, stopwordsText]) => {
     const stopwords = stopwordsText.split(/\s+/).filter(w => w.length > 0);
     const frankTop = analyze(frankText, stopwords);
     const dracTop = analyze(dracText, stopwords);
