@@ -64,8 +64,8 @@ Promise.all([
     const stopwords = stopwordsText.split(/\s+/).filter(w => w.length > 0);
     const frankTop = analyze(frankText, stopwords);
     const dracTop = analyze(dracText, stopwords);
-    drawChart("#chart-frankenstein", scarletTop, "rgba(40, 167, 69, 0.6)");
-    drawChart("#chart-dracula", houndTop, "rgba(220, 53, 69, 0.6)");
+    drawChart("#chart-frankenstein", frankTop, "rgba(40, 167, 69, 0.6)");
+    drawChart("#chart-dracula", dracTop, "rgba(220, 53, 69, 0.6)");
 });
 
 // topN 얻기
