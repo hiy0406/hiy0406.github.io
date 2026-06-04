@@ -62,7 +62,7 @@ Promise.all([
     fetch("/data/stopwords-en.txt").then(r => r.text()),
     fetch("/data/stopwords-custom.txt").then(r => r.text()),
 ]).then(([frankText, dracText, baseStop, customStop]) => {
-    const stopwords = (basestop + customStop).split(/\s+/).filter(w => w.length > 0);
+    const stopwords = (baseStop + customStop).split(/\s+/).filter(w => w.length > 0);
     const frankTop = analyze(frankText, stopwords);
     const dracTop = analyze(dracText, stopwords);
     drawChart("#chart-frankenstein", frankTop, "rgba(40, 167, 69, 0.6)");
