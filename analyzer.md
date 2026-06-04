@@ -16,4 +16,4 @@ permalink: /analyzer/
 
 {% include chartjs.html %}
 <script src="/assets/js/analysis.js"></script>
-<script srt="/assets/js/analyzer.js"></script>
+<script src="/assets/js/analyzer.js"></script>
